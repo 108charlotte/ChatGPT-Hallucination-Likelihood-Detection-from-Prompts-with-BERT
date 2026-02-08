@@ -27,19 +27,19 @@ The highest maximum F1 value achieved by a configuration was 0.4678 (configurati
 Additionally, the fact that all tested hyperparameter combinations had F1 scores in a similar range suggests that hyperparameter tuning is unlikely to significantly boost the model's performance. 
 
 ### Confusion Matrix
-![Confusion matrix for the best model](https://hc-cdn.hel1.your-objectstorage.com/s/v3/6e19d99aeadebafd_confusion_matrix_best.png)
+![Confusion matrix for the best model](https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/6e19d99aeadebafd_confusion_matrix_best.png)
 *Best model (Config 15, Epoch 5): 167 true positives, 323 false positives, 57 false negatives, and 378 true negatives*
 
-![Confusion matrix for the worst model](https://hc-cdn.hel1.your-objectstorage.com/s/v3/67d5032d98ca27c0_confusion_matrix_worst.png)
+![Confusion matrix for the worst model](https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/67d5032d98ca27c0_confusion_matrix_worst.png)
 *Worst model (Config 3, Epoch 1): 179 true positives, 404 false positives, 45 false negatives, and 297 true negatives*
 
 Both models have a high rate of false positives, with approximately one in every three positive predictions being a true positive and two being false alarms. However, both models have high recall (Config 3 recall in epoch 1 is 80%, Config 15 recall in epoch 5 is 75%). While high recall allows the model to detect more true positives, it is at the cost of precision which decreases the model's F1 and creates many false alarms. 
 
 ### Training v. Validation Loss
-![Plot of Training and Validation Loss for Best Model](https://hc-cdn.hel1.your-objectstorage.com/s/v3/202bcc3a870081b5_loss_best.png)
+![Plot of Training and Validation Loss for Best Model](https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/202bcc3a870081b5_loss_best.png)
 *Best model (Config 15, Epoch 5): Overfitting begins after Epoch 3*
 
-![Plot of Training and Validation Loss for Worst Model](https://hc-cdn.hel1.your-objectstorage.com/s/v3/272b23ab65cee90b_loss_worst.png)
+![Plot of Training and Validation Loss for Worst Model](https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/272b23ab65cee90b_loss_worst.png)
 *Worst model (Config 3, Epoch 1): Overfitting begins immediately before Epoch 4*
 
 The best model's training and validation loss plot indicates overfitting beginning after Epoch 3, and the worst model at Epoch 4. In the end, both the best and worst models ended up with similar loss trajectories. These results suggest that the dataset may have been too small to train a BERT model on or, since recall is known to be high, that the model isn't detecting any reliable characteristics in true positive prompts which would allow it to have a high precision. 
